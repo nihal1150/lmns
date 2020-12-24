@@ -1,0 +1,21 @@
+extends layouts/main-layout.pug
+
+block content
+    .col-md-4.offset-md-4.mt-3
+        .card
+            .card-header
+                h4 Add loans
+            .card-body
+                form(action="/loans", method="POST")
+                    .form-group
+                        label(for="name") Name
+                        input.form-control(type="text", name="name")
+                    .form-group
+                        label(for="loan") Loan
+                        input.form-control(type="text", name="loan")
+                    .form-group
+                        label(for="month") Month
+                        input.form-control(type="text", name="month")
+                    button.btn.btn-primary.mt-3.submit-btn Submit
+
+                

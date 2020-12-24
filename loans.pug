@@ -1,0 +1,22 @@
+extends layouts/main-layout.pug
+
+block content
+    .container.mt-3
+        table.table.table-bordered.table-hover.table-dark
+            thead
+                tr
+                    th Name
+                    th Loan
+                    th Month
+                    th Delete
+            tbody
+                each loan in loan
+                    tr
+                        td #{loan.name}
+                        td #{loan.loan}
+                        td #{loan.month}
+                        td 
+                            form(action="/loans?_method=DELETE", method="POST")
+                                input(type="hidden", name="id", value=loan.id)
+                                button.btn.btn-primary(type="submit") Delete
+        
